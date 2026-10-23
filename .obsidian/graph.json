@@ -1,0 +1,72 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"本章复盘\"",
+      "color": {
+        "a": 1,
+        "rgb": 7153881
+      }
+    },
+    {
+      "query": "path:\"00 索引\"",
+      "color": {
+        "a": 1,
+        "rgb": 4988309
+      }
+    },
+    {
+      "query": "path:\"综合篇\"",
+      "color": {
+        "a": 1,
+        "rgb": 8141549
+      }
+    },
+    {
+      "query": "path:\"线代\"",
+      "color": {
+        "a": 1,
+        "rgb": 9133302
+      }
+    },
+    {
+      "query": "path:\"ZZ 数一真题\"",
+      "color": {
+        "a": 1,
+        "rgb": 14538494
+      }
+    },
+    {
+      "query": "path:\"ZZ 考点\"",
+      "color": {
+        "a": 1,
+        "rgb": 10980346
+      }
+    },
+    {
+      "query": "path:\"高数\"",
+      "color": {
+        "a": 1,
+        "rgb": 12891645
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0.15,
+  "nodeSizeMultiplier": 1.25,
+  "lineSizeMultiplier": 0.7,
+  "collapse-forces": false,
+  "centerStrength": 0.36,
+  "repelStrength": 11,
+  "linkStrength": 0.9,
+  "linkDistance": 150,
+  "scale": 0.9,
+  "close": false
+}

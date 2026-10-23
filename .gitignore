@@ -1,0 +1,16 @@
+# macOS / 系统垃圾
+.DS_Store
+._*
+Icon?
+
+# Obsidian 运行时状态（每次开关都会变，不必版本化）
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json.bak-*
+.obsidian/plugins/*/main.js.map
+.trash/
+
+# 脚本缓存
+__pycache__/
+*.pyc

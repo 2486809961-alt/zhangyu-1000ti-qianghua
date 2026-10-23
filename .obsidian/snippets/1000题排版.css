@@ -1,0 +1,273 @@
+/* ============================================================
+   张宇 1000 题 · 题库笔记排版（基础篇 / 强化篇 通用）
+   设置 → 外观 → CSS 代码片段 → 开启「1000题排版」
+   ============================================================ */
+
+body {
+	--line-height-normal: 1.9;
+	--p-spacing: 1em;
+	--heading-spacing: 1.6em;
+	--h1-size: 1.75em;
+	--h2-size: 1.3em;
+	--h3-size: 1.12em;
+	--file-line-width: 46rem;
+
+	--tq-blue: #2f6ec8;
+	--tq-green: #2f9e6b;
+	--tq-orange: #d98324;
+	--tq-purple: #8b5cf6;
+	--tq-slate: #64748b;
+	--tq-soft: rgba(47, 110, 200, 0.08);
+}
+
+.theme-dark {
+	--tq-blue: #7aa7ff;
+	--tq-green: #58d68d;
+	--tq-orange: #f5b041;
+	--tq-purple: #a78bfa;
+	--tq-slate: #94a3b8;
+	--tq-soft: rgba(122, 167, 255, 0.12);
+}
+
+/* ---------- 标题 ---------- */
+
+.markdown-rendered h1,
+.markdown-preview-view h1,
+.HyperMD-header-1 {
+	font-size: var(--h1-size);
+	font-weight: 700;
+	letter-spacing: 0.3px;
+	padding-bottom: 0.3em;
+	border-bottom: 3px solid transparent;
+	border-image: linear-gradient(90deg, var(--tq-blue), transparent 78%) 1;
+	margin-bottom: 1em;
+}
+
+.markdown-rendered h2,
+.markdown-preview-view h2,
+.HyperMD-header-2 {
+	font-size: var(--h2-size);
+	font-weight: 650;
+	margin-top: var(--heading-spacing);
+	margin-bottom: 0.6em;
+	padding: 0.16em 0 0.16em 0.7em;
+	border-left: 4px solid var(--tq-blue);
+	border-radius: 0 8px 8px 0;
+	background: linear-gradient(90deg, var(--tq-soft), transparent 85%);
+}
+
+.markdown-rendered h3,
+.markdown-preview-view h3,
+.HyperMD-header-3 {
+	font-size: var(--h3-size);
+	font-weight: 650;
+	color: var(--tq-blue);
+	margin-top: 1.3em;
+}
+
+/* ---------- 正文 ---------- */
+
+.markdown-rendered p,
+.markdown-rendered li {
+	line-height: 1.9;
+}
+
+.markdown-rendered ul > li,
+.markdown-rendered ol > li {
+	margin: 0.32em 0;
+}
+
+.markdown-rendered ul > li::marker,
+.markdown-rendered ol > li::marker {
+	color: var(--tq-blue);
+}
+
+.markdown-rendered ol > li::marker {
+	font-weight: 650;
+}
+
+.markdown-rendered p strong,
+.markdown-rendered li strong {
+	font-weight: 650;
+	background: linear-gradient(transparent 62%, rgba(255, 205, 60, 0.32) 0);
+	padding: 0 1px;
+}
+
+.theme-dark .markdown-rendered p strong,
+.theme-dark .markdown-rendered li strong {
+	background: linear-gradient(transparent 62%, rgba(255, 205, 60, 0.2) 0);
+}
+
+/* ---------- Callout（题干 / 答案 / 考点 / 30 讲 / 类似真题 / 复盘） ---------- */
+
+.markdown-rendered .callout {
+	border-radius: 12px;
+	border: 1px solid rgba(120, 130, 150, 0.22);
+	background: var(--background-secondary);
+	box-shadow: 0 2px 12px rgba(20, 30, 50, 0.05);
+	margin: 0.9em 0;
+	padding: 0.55em 0.95em;
+}
+
+.markdown-rendered .callout-title {
+	font-weight: 650;
+	letter-spacing: 0.2px;
+}
+
+.markdown-rendered .callout-content > :first-child {
+	margin-top: 0.4em;
+}
+
+.markdown-rendered .callout-content > :last-child {
+	margin-bottom: 0.25em;
+}
+
+/* 题干：主视觉，字号略放大、行距更松 */
+.callout[data-callout="question"] {
+	--callout-color: 47, 110, 200;
+	background: linear-gradient(180deg, var(--tq-soft), var(--background-secondary) 60%);
+	border-color: rgba(47, 110, 200, 0.28);
+}
+.callout[data-callout="question"] .callout-content {
+	font-size: 1.01em;
+	line-height: 1.95;
+}
+
+/* 答案：大字、居中偏重 */
+.callout[data-callout="success"] {
+	--callout-color: 47, 158, 107;
+	border-color: rgba(47, 158, 107, 0.3);
+}
+.callout[data-callout="success"] .callout-content {
+	font-weight: 650;
+	font-size: 1.05em;
+	letter-spacing: 0.3px;
+}
+
+/* 考点 */
+.callout[data-callout="info"] {
+	--callout-color: 100, 116, 139;
+	--callout-icon: lucide-tags;
+}
+
+/* 30 讲定位 */
+.callout[data-callout="example"] {
+	--callout-color: 139, 92, 246;
+	--callout-icon: lucide-book-open;
+	font-size: 0.95em;
+}
+
+/* 类似真题 */
+.callout[data-callout="tip"] {
+	--callout-color: 234, 179, 8;
+	--callout-icon: lucide-git-branch;
+}
+
+/* 复盘提示 */
+.callout[data-callout="warning"] {
+	--callout-color: 217, 131, 36;
+	--callout-icon: lucide-triangle-alert;
+}
+
+/* ---------- 表格 ---------- */
+
+.markdown-rendered table {
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+	margin: 1em 0;
+	font-size: 0.94em;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.markdown-rendered thead th {
+	background: var(--background-secondary);
+	font-weight: 650;
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered th,
+.markdown-rendered td {
+	padding: 0.45em 0.7em;
+}
+
+.markdown-rendered tbody tr:nth-child(even) {
+	background: var(--background-primary-alt);
+}
+
+.markdown-rendered tbody tr:hover {
+	background: var(--tq-soft);
+}
+
+/* ---------- 数学公式 ---------- */
+
+.math.math-inline,
+mjx-container:not([display="true"]) {
+	color: var(--tq-blue);
+}
+
+.math.math-block,
+mjx-container[display="true"] {
+	display: block;
+	background: var(--background-secondary);
+	border-left: 3px solid var(--tq-blue);
+	border-radius: 0 10px 10px 0;
+	padding: 0.65em 1em;
+	margin: 0.9em 0;
+	overflow-x: auto;
+}
+
+/* ---------- 其他 ---------- */
+
+.markdown-rendered blockquote {
+	border-left: 3px solid var(--background-modifier-border);
+	border-radius: 0 8px 8px 0;
+	background: var(--background-secondary-alt);
+	color: var(--text-muted);
+	padding: 0.4em 1em;
+}
+
+.markdown-rendered hr {
+	border: none;
+	height: 1px;
+	margin: 2em 0;
+	background: linear-gradient(90deg, transparent, var(--background-modifier-border), transparent);
+}
+
+.markdown-rendered a.internal-link {
+	text-decoration: none;
+	border-bottom: 1px dashed var(--text-faint);
+	padding-bottom: 1px;
+}
+
+.markdown-rendered a.internal-link:hover {
+	color: var(--tq-blue);
+	border-bottom-color: var(--tq-blue);
+	background: var(--tq-soft);
+	border-radius: 3px;
+}
+
+.markdown-rendered a.tag {
+	background: var(--tq-soft);
+	color: var(--tq-blue);
+	border-radius: 999px;
+	padding: 0.05em 0.6em;
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+.markdown-preview-view .metadata-container,
+.markdown-reading-view .metadata-container {
+	background: var(--background-secondary);
+	border: 1px solid var(--background-modifier-border);
+	border-radius: 10px;
+	padding: 0.45em 0.8em;
+	margin-bottom: 1em;
+	font-size: 0.85em;
+}
+
+.markdown-source-view.mod-cm6 .cm-line {
+	line-height: 1.85;
+}
